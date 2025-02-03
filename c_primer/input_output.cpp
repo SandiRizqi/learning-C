@@ -1,5 +1,8 @@
 #include <iostream>
 using namespace std;
+/*
+this program work to collect two number and print the sum of the number
+*/
 
 int main() {
     int v1 = 0, v2 = 0;
