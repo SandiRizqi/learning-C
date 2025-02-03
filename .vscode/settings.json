@@ -37,12 +37,7 @@
   "C_Cpp_Runner.warningsAsError": false,
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.linkerArgs": [],
-  "C_Cpp.default.includePath": [
-    "/usr/local/include",
-    "/opt/homebrew/include",
-    "/usr/include",
-    "C:/vcpkg/installed/x64-windows/include"
-  ],
+  "C_Cpp.default.includePath": [],
   "C_Cpp_Runner.includePaths": [],
   "C_Cpp_Runner.includeSearch": [
     "*",
