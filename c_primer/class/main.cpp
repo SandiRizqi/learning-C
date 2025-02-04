@@ -18,12 +18,46 @@ class Mahasiswa {
 
 };
 
+class Person {
+    public:
+        int power;
+        string name;
+        int balance;
+        Person(int inputPower, string inputName, int inputBalance) {
+            Person::power = inputPower;
+            Person::name = inputName;
+            Person::balance = inputBalance;
+        }
+
+        void displayData () {
+            cout << "Name :" << Person::name << endl;
+            cout << "Power :" << Person::power << endl;
+            cout << "Balance :" << Person::balance << endl;
+        }
+
+
+        void ubahNama(string newName) {
+            Person::name = newName;
+        }
+
+        string getName() {
+            return Person::name;
+        }
+};
+
 
 int main() {
-    Mahasiswa siswa1("Anugrah Sandi Rizqi", "12345556", "Kehutanan", 3.65);
-    cout << "Nama dari siswa adalah " << siswa1.nama << endl;
-    cout << "NIM dari siswa adalah " << siswa1.NIM << endl;
-    cout << "Jurusan dari siswa adalah " << siswa1.jurusan << endl;
-    cout << "IPK dari siswa adalah " << siswa1.IPK << endl;
+    //g++ main.cpp -o mainMahasiswa siswa1("Anugrah Sandi Rizqi", "12345556", "Kehutanan", 3.65);
+    Person person1(10, "Sandi", 100);
+    Person person2(15, "Sandi Rizqi", 150);
+    person1.displayData();
+    person2.displayData();
+
+    person1.ubahNama("Paijo");
+    person1.displayData();
+
+    string name1 = person1.getName();
+    cout << "Name :" << name1 << endl;
+
     return 0;
 }
