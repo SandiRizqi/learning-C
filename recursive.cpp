@@ -10,7 +10,15 @@ int pangkat(int a, int b) {
     }
 } 
 
+int factorial(int a) {
+    if (a <= 1) {
+        return a;
+    }
+    return a * factorial(a-1);
+}
+
 int main() {
-    cout << "Hasil pangkat : " << pangkat(2,21) << endl;
+    cout << "Hasil Pangkat : " << pangkat(2,21) << endl;
+    cout << "Hasil Factorial : " << factorial(5) << endl;
     return 0;
 }
