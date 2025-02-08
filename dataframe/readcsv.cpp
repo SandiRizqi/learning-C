@@ -60,6 +60,21 @@ vector<vector<string> > readCSV (const string &filepath, char delimiter = ',') {
     
 }
 
+
+size_t getMemoryUsage(const vector<vector<string>> &data) {
+    size_t totalSize = sizeof(data); // Base vector size
+
+    for (const auto &row : data) {
+        totalSize += sizeof(row); // Each row (vector<string>)
+
+        for (const auto &cell : row) {
+            totalSize += sizeof(cell) + cell.capacity(); // String struct + actual storage
+        }
+    }
+
+    return totalSize;
+}
+
 int main () {
     string filename;
     cout << "Masukan Path file CSV :" << endl;
@@ -67,8 +82,8 @@ int main () {
     Timer myTimer;
     myTimer.startTimer();
     vector<vector<string> > csvData = readCSV(filename, ',');
-    cout << "Memory allocation :"  << sizeof(csvData) << " byte" << endl;
     myTimer.finishTimer();
+    cout << "Memory allocation :"  << getMemoryUsage(csvData) << " bytes" << endl;
     cout << "The system spends : " << myTimer.getDuration() << " seconds" << endl;
     // for (const auto &row : csvData) {
     //     for (const auto &cell : row) {
