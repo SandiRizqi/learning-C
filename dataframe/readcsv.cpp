@@ -67,7 +67,7 @@ int main () {
     Timer myTimer;
     myTimer.startTimer();
     vector<vector<string> > csvData = readCSV(filename, ',');
-    cout << sizeof(csvData) << " byte" << endl;
+    cout << "Memory allocation :"  << sizeof(csvData) << " byte" << endl;
     myTimer.finishTimer();
     cout << "The system spends : " << myTimer.getDuration() << " seconds" << endl;
     // for (const auto &row : csvData) {
